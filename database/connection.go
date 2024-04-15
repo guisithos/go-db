@@ -8,9 +8,9 @@ import (
 )
 
 func ConnectToDatabase() (*sql.DB, error) {
-	user := "tasy"
-	password := "aloisk"
-	host := "192.168.5.129"
+	user := ""
+	password := ""
+	host := ""
 	port := 1521
 	serviceName := "dbtreinamentos"
 
