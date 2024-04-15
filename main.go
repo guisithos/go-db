@@ -1,7 +1,7 @@
 package main
 
 import (
-	"/home/gui/go-db/database"
+	"github.com/guisithos/go-db/database"
 )
 
 func main() {
