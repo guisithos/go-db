@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -40,6 +41,8 @@ func renderWebpage(w http.ResponseWriter, dadosProtocolo ProtocoloData) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println(dadosProtocolo.NrProtocolo, dadosProtocolo.NrSeqProtocolo)
 
 	return nil
 }

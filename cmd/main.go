@@ -1,6 +1,9 @@
 package main
 
 import (
+	"net/http"
+
+	"github.com/guisithos/go-db/app"
 	"github.com/guisithos/go-db/database"
 )
 
@@ -10,4 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	http.HandleFunc("/", app.HandleWebpage)
+	http.ListenAndServe(":8080", nil)
 }
