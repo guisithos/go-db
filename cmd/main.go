@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/guisithos/go-db/app"
+	app "github.com/guisithos/go-db/app/web/dadosProtocolo"
 	"github.com/guisithos/go-db/database"
 )
 
