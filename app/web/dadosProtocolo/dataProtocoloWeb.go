@@ -7,7 +7,6 @@ import (
 )
 
 func HandleWebpage(w http.ResponseWriter, r *http.Request) {
-
 	dadosProtocolo, err := GetProtocoloData()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -22,22 +21,12 @@ func HandleWebpage(w http.ResponseWriter, r *http.Request) {
 }
 
 func renderWebpage(w http.ResponseWriter, dadosProtocolo ProtocoloData) error {
-	tmpl := `
-    <html>
-    <head><title>Teste</title></head>
-    <body>
-        <h1>Informações do Protocolo</h1>
-        <p>Protocolo: {{.NrProtocolo}}</p>
-        <p>Seq Protocolo: {{.NrSeqProtocolo}}</p>
-    </body>
-    </html>`
-
-	t, err := template.New("webpage").Parse(tmpl)
+	tmpl, err := template.ParseFiles("/home/gui/go-db/app/web/dadosProtocolo/dadosProtocolo.html")
 	if err != nil {
 		return err
 	}
 
-	err = t.Execute(w, dadosProtocolo)
+	err = tmpl.Execute(w, dadosProtocolo)
 	if err != nil {
 		return err
 	}

@@ -30,5 +30,8 @@ func GetProtocoloData() (ProtocoloData, error) {
 		NrSeqProtocolo: nrSeqProtocolo,
 	}
 
+	db.Close()
+
 	return dadosProtocolo, nil
+
 }

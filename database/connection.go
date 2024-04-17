@@ -36,20 +36,8 @@ func ConnectToDatabase() (*sql.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	/* query := "select nr_protocolo, nr_seq_protocolo from protocolo_convenio where nr_seq_protocolo = 210"
-	var nrProtocolo string
-	var nr_seq_protocolo int
-
-	err = db.QueryRow(query).Scan(&nrProtocolo, &nr_seq_protocolo)
-	if err != nil {
-		return nil, err
-	}
-	fmt.Println("Protocolo: ", nrProtocolo, "Sequência: ", nr_seq_protocolo) */
-
 	fmt.Println("Connection to Oracle database successful")
 
-	//fmt.Println("nrProtocolo:", nrProtocolo)
 	return db, nil
 }
 
